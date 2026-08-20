@@ -11,16 +11,16 @@
     "condition_en": "Mint Condition",
     "condition_ar": "Mint Condition",
     "grade": "-",
-    "price": 1199,
+    "price": 1350,
     "status": "in_stock",
     "brand": "Apple",
-    "old_price": 1259,
+    "old_price": 1320,
     "badge_en": "iPhone 14 Series",
     "badge_ar": "سلسلة iPhone 14",
     "storage_options": [
       {
         "storage": "128GB",
-        "price": 1199,
+        "price": 1350,
         "status": "in_stock"
       },
       {
