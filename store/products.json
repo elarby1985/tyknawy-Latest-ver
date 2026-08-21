@@ -751,7 +751,7 @@
     "spec_ar": "تيتانيوم • GPS + Cellular • مقاس 49 مم • شريحة S10",
     "condition_en": "Condition to be updated",
     "condition_ar": "يتم تحديث الحالة عند توفر الساعة",
-    "grade": "A",
+    "grade": "A", 
     "price":2250,
     "status": "in_stock",
     "brand": "Apple",
