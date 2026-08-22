@@ -2187,3 +2187,251 @@ p {
   display: block;
   margin: auto;
 }
+
+
+/* Version 14 — animated premium homepage hero + mobile motion */
+.hero.hero-map {
+  position: relative;
+  padding-top: 58px;
+  padding-bottom: 70px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(22,79,147,.08), transparent 30%),
+    linear-gradient(180deg, #f5f8fb 0%, #eef3f8 100%);
+}
+.hero-intro {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+.hero-eyebrow {
+  animation: heroFadeUp .7s ease both;
+}
+.hero-intro h1 {
+  margin: 0 auto 18px;
+  color: var(--navy-dark);
+  font-size: clamp(2.45rem, 5.4vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  animation: heroFadeUp .8s .12s ease both;
+}
+.hero-intro h1 span {
+  color: var(--blue);
+}
+.hero-intro .hero-lead {
+  animation: heroFadeUp .8s .24s ease both;
+}
+.hero-motion {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: inherit;
+}
+.hero-motion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 20%, rgba(11,47,91,.045) 70%, rgba(11,47,91,.11) 100%);
+  animation: heroPulse 5s ease-in-out infinite;
+}
+.motion-scan {
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 22%;
+  height: 140%;
+  background: linear-gradient(90deg, transparent, rgba(245,160,0,.16), rgba(22,79,147,.12), transparent);
+  transform: rotate(12deg);
+  filter: blur(3px);
+  animation: scanAcross 7s ease-in-out infinite;
+}
+.motion-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 5px rgba(245,160,0,.13), 0 0 18px rgba(245,160,0,.45);
+  animation: floatDot 3.5s ease-in-out infinite;
+}
+.dot-1 { left: 18%; top: 28%; animation-delay: -.4s; }
+.dot-2 { left: 43%; top: 18%; animation-delay: -1.2s; }
+.dot-3 { right: 19%; top: 34%; animation-delay: -.8s; }
+.dot-4 { left: 28%; bottom: 19%; animation-delay: -2s; }
+.dot-5 { right: 31%; bottom: 22%; animation-delay: -1.6s; }
+.integration-showcase {
+  position: relative;
+  transform: translateZ(0);
+  box-shadow: 0 24px 65px rgba(11,47,91,.10);
+  animation: heroStageIn .9s .18s ease both;
+}
+.integration-showcase picture,
+.integration-showcase img {
+  position: relative;
+  z-index: 1;
+}
+.hero-actions-center .button {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.hero-actions-center .button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(11,47,91,.13);
+}
+.hero-actions-center .button-primary {
+  animation: buttonIn .7s .45s ease both;
+}
+.hero-actions-center .button-secondary {
+  animation: buttonIn .7s .58s ease both;
+}
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroStageIn {
+  from { opacity: 0; transform: translateY(28px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes buttonIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes floatDot {
+  0%,100% { transform: translate3d(0,0,0) scale(.85); opacity: .45; }
+  50% { transform: translate3d(18px,-14px,0) scale(1.25); opacity: 1; }
+}
+@keyframes scanAcross {
+  0%,15% { left: -25%; opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: .75; }
+  100% { left: 110%; opacity: 0; }
+}
+@keyframes heroPulse {
+  0%,100% { opacity: .55; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+@media (max-width: 620px) {
+  .hero.hero-map {
+    padding-top: 32px;
+    padding-bottom: 34px;
+  }
+  .hero-intro {
+    margin-bottom: 22px;
+    padding-inline: 4px;
+  }
+  .hero-intro h1 {
+    font-size: clamp(2rem, 9.4vw, 2.8rem);
+    line-height: 1.04;
+    letter-spacing: -.035em;
+    margin-bottom: 13px;
+  }
+  .hero-intro .hero-lead {
+    font-size: .88rem;
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+  .hero-eyebrow {
+    margin-bottom: 9px;
+    font-size: .67rem;
+  }
+  .integration-showcase {
+    box-shadow: 0 14px 35px rgba(11,47,91,.09);
+  }
+  .hero-motion::before {
+    background: radial-gradient(circle at 50% 50%, transparent 18%, rgba(11,47,91,.035) 75%, rgba(11,47,91,.08) 100%);
+  }
+  .motion-dot {
+    width: 6px;
+    height: 6px;
+    box-shadow: 0 0 0 3px rgba(245,160,0,.12), 0 0 10px rgba(245,160,0,.35);
+  }
+  .motion-scan {
+    width: 30%;
+    animation-duration: 6s;
+  }
+  .dot-1 { left: 15%; top: 25%; }
+  .dot-2 { left: 46%; top: 14%; }
+  .dot-3 { right: 14%; top: 28%; }
+  .dot-4 { left: 25%; bottom: 17%; }
+  .dot-5 { right: 25%; bottom: 18%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow, .hero-intro h1, .hero-intro .hero-lead,
+  .integration-showcase, .hero-actions-center .button,
+  .motion-dot, .motion-scan, .hero-motion::before {
+    animation: none !important;
+  }
+}
+
+/* Version 15 — visible live network motion over the hero graphic */
+.hero-motion {
+  z-index: 4;
+  border-radius: inherit;
+}
+.motion-glow {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(22,79,147,.16) 0%, rgba(22,79,147,.06) 38%, transparent 70%);
+  animation: coreGlow 2.4s ease-in-out infinite;
+}
+.motion-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  overflow: visible;
+}
+.motion-routes path {
+  fill: none;
+  stroke: rgba(22,79,147,.20);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 12 14;
+  animation: routeFlow 1.2s linear infinite;
+}
+.motion-pulses circle {
+  fill: #1674e8;
+  stroke: #fff;
+  stroke-width: 3;
+}
+.motion-core-ring {
+  fill: none;
+  stroke: rgba(22,79,147,.28);
+  stroke-width: 2;
+  stroke-dasharray: 8 12;
+  transform-origin: 600px 325px;
+  animation: ringSpin 7s linear infinite;
+}
+.motion-core-ring-2 {
+  stroke: rgba(245,160,0,.20);
+  stroke-dasharray: 3 16;
+  animation-duration: 10s;
+  animation-direction: reverse;
+}
+@keyframes routeFlow {
+  to { stroke-dashoffset: -26; }
+}
+@keyframes ringSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes coreGlow {
+  0%,100% { opacity: .55; transform: translate(-50%,-50%) scale(.9); }
+  50% { opacity: 1; transform: translate(-50%,-50%) scale(1.18); }
+}
+@media (max-width: 620px) {
+  .motion-routes path { stroke-width: 2.5; }
+  .motion-pulses circle { r: 5; }
+  .motion-glow { width: 120px; height: 120px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-routes path, .motion-core-ring, .motion-glow { animation: none !important; }
+}
